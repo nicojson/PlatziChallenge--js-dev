@@ -1,47 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Password generator by Platzi community">
-  <title>Password generator</title>
-  <link rel="stylesheet" href="./src/styles.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./src/styles.css">
+  <title>password-generator</title>
 </head>
-
 <body>
-  <form class="form" id="form">
-    <p class="password">Aquí aparecerá tu contraseña</p>
-    <input type="text" disabled id="password">
-    <button type="button" disabled id="button-copy">Copiar contraseña</button>
-    <div class="option">
-      <p id="password-length">55</p>
-      <input type="range" name="length" id="input-length" min="10" max="100">
-      <p>Define el total de caracteres de tu contraseña</p>
-    </div>
-    <div class="option">
-      <input type="checkbox" name="letters" id="">
-      <p>Incluir letras</p>
-    </div>
-    <div class="option">
-      <input type="checkbox" name="numbers" id="">
-      <p>Incluir numeros</p>
-    </div>
-    <div class="option">
-      <input type="checkbox" name="symbols" id="">
-      <p>Incluir simbolos</p>
-    </div>
-    <div class="option">
-      <input type="checkbox" name="words" id="">
-      <p>Incluir palabras</p>
-    </div>
-    <div class="option">
-      <button type="submit" id="generate-button">Genera tu fuerte contraseña</button>
-    </div>
-  </form>
-
+	<main>
+		<form action="submit" class="form-container">
+			<h2>Hola, bienvenido al generador de contraseñas</h2>
+			<p>Indique la longitud, utilize una de las siguientes opciones</p>
+			<div class="passtword-lengh-container">
+				<input type="range" id="passtword-lengh-bar">
+				</input>
+				<input type="number" min="10" max="99" name="" id="passtword-manual-lengh">
+			</div>
+			<div class="passtword-options-container">
+				<h3>Generar contraseña con:</h3>
+				<div class="ckeckbox-container">
+					<input type="checkbox" name="numeros" id="option-numbers">
+					<span>numeros</span>
+				</div>
+				<div class="ckeckbox-container">
+					<input type="checkbox" name="letras" id="option-letters">
+					<span>letras</span>
+				</div>
+				<div class="ckeckbox-container">
+					<input type="checkbox" name="simbolos" id="option-simbols">
+					<span>simbolos</span>
+				</div>
+				<div class="ckeckbox-container">
+					<input type="checkbox" name="numeros, letras, simbolos" id="option-simbols">
+					<span>todos</span>
+				</div>
+			</div>
+			<button class="form-container-primary-button primary-button" type="submit">Generar contraseña</button>
+			<div class="passtword-output-container">
+				<span>Tu nueva contraseña:</span>
+				<button type="button" class="output-copy output-copy-ativate" id="passtword-output-copy">contraseña</button>
+			</div>
+		</form>
+	</main>
   <script src="./src/index.js"></script>
 </body>
-
 </html>
