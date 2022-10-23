@@ -1,10 +1,10 @@
 :root{
-  --bg-color: #121f3d;
-  --text-color: white;
-  --border-color: #40587c;
-  --button-text-color: rgb(131, 217, 136);
+  --bg-color: #122c34;
+  --bg-color-secondary: #44cfcb;
+  --bg-color-button: #4ea5d9;
+  --text-color: #2a4494;
+  --border-color: #224870;
 }
-
 /* Estilos base */
 * {
 	box-sizing: border-box;
@@ -17,13 +17,17 @@ html {
 	font-family: 'DM Sans', sans-serif;
 }
 
+body {
+  color: var(--text-color);
+}
+
 main {
 	display: grid;
 	place-content: center;
 	width: 100%;
 	height: 100vh;
 	font-size: 1.8rem;
-	background-color: #dce1de;
+	background-color: var(--bg-color);
 }
 
 main .form-container {
@@ -33,43 +37,52 @@ main .form-container {
 	justify-items: center;
 	align-items: center;
 	padding: 16px;
-	width: 280px;
-	height: 600px;
+  min-width: 90%;
+	min-height: 90%;
 	border-radius: 8px;
-	background-color: #216869;
-	box-shadow: 4px 4px 16px black;
+	background-color: var(--bg-color-secondary);
 }
 
 main .form-container h2 {
 	text-align: center;
 }
 
-.form-container .passtword-lengh-container {
+.form-container .password-length-container {
 	display: flex;
+  justify-content: space-around;
+  width: 90%;
+  height: auto;
 }
 
-.form-container .passtword-lengh-container input {
-	width: 80px;
-	height: 24px;
-	/* margin-left: 16px; */
+.form-container .password-length-container input {
+	width: 40%;
+	height: auto;
 	text-align: center;
 	font-size: 1.6rem;
 	font-weight: 700;
 	border-radius: 8px;
-	border-color: #49a078;
+	border-color: var(--border-color);
 }
 
-.form-container .passtword-lengh-container input:focus-visible {
-	outline: solid #9cc5a1;
+.form-container .password-length-container input:hover {
+  box-shadow: 1px 1px 4px black;
 }
 
-.form-container .passtword-options-container .ckeckbox-container {
+.form-container .password-length-container input:focus-visible {
+	outline: none;
+}
+
+.form-container .password-options-container .ckeckbox-container {
 	display: flex;
 	align-items: center;
 	margin-top: 12px;
 }
 
-.form-container .passtword-options-container .ckeckbox-container input {
+.form-container .password-options-container .ckeckbox-container:hover {
+  box-shadow: 1px 1px 8px var(--text-color);
+}
+
+.form-container .password-options-container .ckeckbox-container input {
 	width: 18px;
 	height: 18px;
 	margin-right: 12px;
@@ -80,31 +93,54 @@ main .form-container h2 {
 	height: 38px;
 	border-radius: 8px;
 	cursor: pointer;
-	background-color: #49a078;
+	background-color: var(--bg-color-button);
 }
 
 .form-container .primary-button:hover {
 	box-shadow: 4px 4px 8px #1f2421;
-	background-color: #9cc5a1;
+	opacity: 80%;
 }
 
-.form-container .passtword-output-container {
+.form-container .password-output-container {
 	display: flex;
 	flex-direction: column;
 }
 
-.form-container .passtword-output-container span {
+.form-container .password-output-container span {
 	margin-bottom: 4px;
 }
 
-.form-container .passtword-output-container .output-copy {
+.form-container .password-output-container .output-copy {
 	width: 200px;
-	min-height: 40px;
+	height: 40px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 	cursor: pointer;
 	border-radius: 4px;
-	background-color: #dce1de;
+	background-color: var(--bg-color-secondary);
 }
 
-.form-container .passtword-output-container .output-copy:hover {
+.form-container .password-output-container .output-copy-ativate {
+  background-color: #aaf683;
+}
+
+.form-container .password-output-container .output-copy:hover {
 	box-shadow: 4px 4px 16px #1f2421;
+  opacity: 80%;
+}
+
+.form-container .password-output-container .alert {
+  width: 200px;
+  height: auto;
+  margin-top: 8px;
+  padding: 4px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--bg-color);
+  background-color: var(--bg-color-button);
+  box-shadow: 2px 2px 16px #1f2421;
 }

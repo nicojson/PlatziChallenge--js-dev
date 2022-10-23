@@ -12,37 +12,42 @@
 </head>
 <body>
 	<main>
-		<form action="submit" class="form-container">
-			<h2>Hola, bienvenido al generador de contraseñas</h2>
-			<p>Indique la longitud, utilize una de las siguientes opciones</p>
-			<div class="passtword-lengh-container">
-				<input type="range" id="passtword-lengh-bar">
+		<form class="form-container" id="#form">
+			<h2>Strong password</h2>
+			<p>Indique la longitud de su nueva contraseña</p>
+			<div class="password-length-container">
+				<input type="range" min="10" max="99" name="lengthrange" id="password-length-range">
 				</input>
-				<input type="number" min="10" max="99" name="" id="passtword-manual-lengh">
+				<input type="number" min="10" max="99" name="length" id="password-manual-length">
 			</div>
-			<div class="passtword-options-container">
+			<div class="password-options-container">
 				<h3>Generar contraseña con:</h3>
+        <div class="ckeckbox-container">
+					<input type="checkbox" name="allCharacteres" id="option-all">
+					<span>todo</span>
+				</div>
 				<div class="ckeckbox-container">
-					<input type="checkbox" name="numeros" id="option-numbers">
+					<input type="checkbox" name="numbers" id="option-numbers">
 					<span>numeros</span>
 				</div>
 				<div class="ckeckbox-container">
-					<input type="checkbox" name="letras" id="option-letters">
+					<input type="checkbox" name="letters" id="option-letters">
 					<span>letras</span>
 				</div>
 				<div class="ckeckbox-container">
-					<input type="checkbox" name="simbolos" id="option-simbols">
+					<input type="checkbox" name="symbols" id="option-symbols">
 					<span>simbolos</span>
 				</div>
 				<div class="ckeckbox-container">
-					<input type="checkbox" name="numeros, letras, simbolos" id="option-simbols">
-					<span>todos</span>
+					<input type="checkbox" name="words" id="option-words">
+					<span>palabras</span>
 				</div>
 			</div>
-			<button class="form-container-primary-button primary-button" type="submit">Generar contraseña</button>
-			<div class="passtword-output-container">
+			<button class="form-container-primary-button primary-button" type="submit" id="generator-button">Generar contraseña</button>
+			<div class="password-output-container">
 				<span>Tu nueva contraseña:</span>
-				<button type="button" class="output-copy output-copy-ativate" id="passtword-output-copy">contraseña</button>
+				<button type="button" class="output-copy" id="password-output-copy">contraseña</button>
+        <div id="alerta" class="invisible"></div>
 			</div>
 		</form>
 	</main>
