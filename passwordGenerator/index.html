@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="generador de contraseñas seguras">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
@@ -16,31 +17,31 @@
 			<h2>Strong password</h2>
 			<p>Indique la longitud de su nueva contraseña</p>
 			<div class="password-length-container">
-				<input type="range" min="10" max="99" name="lengthrange" id="password-length-range">
+				<input type="range" min="10" max="99" name="lengthrange" id="password-length-range" aria-label="tamaño de su contraseña">
 				</input>
-				<input type="number" min="10" max="99" name="length" id="password-manual-length">
+				<input type="number" min="10" max="99" name="length" id="password-manual-length" aria-label="tamaño de su contraseña">
 			</div>
 			<div class="password-options-container">
 				<h3>Generar contraseña con:</h3>
         <div class="ckeckbox-container">
 					<input type="checkbox" name="allCharacteres" id="option-all">
-					<span>todo</span>
+					<label for="option-all">todo</label>
 				</div>
 				<div class="ckeckbox-container">
 					<input type="checkbox" name="numbers" id="option-numbers">
-					<span>numeros</span>
+					<label for="option-numbers">numeros</label>
 				</div>
 				<div class="ckeckbox-container">
 					<input type="checkbox" name="letters" id="option-letters">
-					<span>letras</span>
+					<label for="option-letters">letras</label>
 				</div>
 				<div class="ckeckbox-container">
 					<input type="checkbox" name="symbols" id="option-symbols">
-					<span>simbolos</span>
+					<label for="option-symbols">simbolos</label>
 				</div>
 				<div class="ckeckbox-container">
 					<input type="checkbox" name="words" id="option-words">
-					<span>palabras</span>
+					<label for="option-words">palabras</label>
 				</div>
 			</div>
 			<button class="form-container-primary-button primary-button" type="submit" id="generator-button">Generar contraseña</button>

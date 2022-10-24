@@ -55,7 +55,7 @@ main .form-container h2 {
 }
 
 .form-container .password-length-container input {
-	width: 40%;
+	width: 20%;
 	height: auto;
 	text-align: center;
 	font-size: 1.6rem;
@@ -66,6 +66,15 @@ main .form-container h2 {
 
 .form-container .password-length-container input:hover {
   box-shadow: 1px 1px 4px black;
+}
+
+.form-container .password-length-container #password-length-range {
+  width: 50%;
+}
+
+.form-container .password-length-container #password-length-range:hover {
+  box-shadow: none;
+  cursor: pointer;
 }
 
 .form-container .password-length-container input:focus-visible {

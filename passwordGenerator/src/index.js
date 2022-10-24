@@ -115,6 +115,8 @@ form.addEventListener("submit", (event) => {
     allCharaters: event.target.allCharacteres.checked,
   };
 
+  console.log(checks)
+
   passwordParagraph.innerText = passwordGenerator(lengthRange, checks);
 });
 
@@ -144,7 +146,7 @@ const divAlert = document.querySelector("#alerta");
 
 function copyExito () {
   passwordParagraph.classList.add("output-copy-ativate");
-  divAlert.innerText = "!!Copiado al portapapeles corectamente!!";
+  divAlert.innerText = "!!Copiado con exito!!";
   divAlert.classList.add("alert");
   setTimeout(hiddenCopyExito, 5000);
 }
