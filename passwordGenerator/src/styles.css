@@ -101,13 +101,17 @@ main .form-container h2 {
 	width: 150px;
 	height: 38px;
 	border-radius: 8px;
-	cursor: pointer;
 	background-color: var(--bg-color-button);
 }
 
 .form-container .primary-button:hover {
+	cursor: pointer;
 	box-shadow: 4px 4px 8px #1f2421;
 	opacity: 80%;
+}
+
+.form-container .primary-button:disabled {
+	cursor: not-allowed;
 }
 
 .form-container .password-output-container {
@@ -127,7 +131,6 @@ main .form-container h2 {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-	cursor: pointer;
 	border-radius: 4px;
 	background-color: var(--bg-color-secondary);
 }
@@ -137,8 +140,13 @@ main .form-container h2 {
 }
 
 .form-container .password-output-container .output-copy:hover {
+	cursor: pointer;
 	box-shadow: 4px 4px 16px #1f2421;
   opacity: 80%;
+}
+
+.form-container .password-output-container .output-copy:disabled {
+	cursor: not-allowed;
 }
 
 .form-container .password-output-container .alert {

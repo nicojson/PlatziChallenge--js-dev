@@ -3,6 +3,8 @@ const passwordParagraph = document.querySelector("#password-output-copy");
 const rangeInput = document.querySelector("#password-length-range");
 const manualInput = document.querySelector("#password-manual-length");
 const allCharacNode = document.querySelector("#option-all");
+const genPassword = document.querySelector("#generator-button");
+const checksContainer = document.querySelector(".password-options-container");
 
 const letters = [
   "a",
@@ -35,10 +37,6 @@ const letters = [
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 const symbols = ["'", ":", "!", "@", "#", "$", "^", ")", "&", "*", "%", "-"];
-
-// genera una cadena de caracteres con letras, numeros o simbolos
-
-// const passwordLength = document.querySelector("#passtword-length-range");
 
 function passwordGenerator (length, checksBotonsitos) {
   const allCharaters = [];
@@ -88,18 +86,39 @@ manualInput.addEventListener("change", (event) => {
   rangeInput.value = getValue;
 })
 
+let numbersCheck = form.numbers;
+let lettersCheck = form.letters;
+let symbolsCheck = form.symbols;
+let wordsCheck = form.words;
+
+checksContainer.addEventListener("change", () => {
+  if (numbersCheck.checked === true || lettersCheck.checked === true || symbolsCheck.checked === true || wordsCheck.checked === true) {
+    genPassword.disabled = false;
+
+  } else if (numbersCheck.checked === false && lettersCheck.checked === false && symbolsCheck.checked === false && wordsCheck.checked === false) {
+    genPassword.disabled = true;
+  }
+  if (numbersCheck.checked === true && lettersCheck.checked === true && symbolsCheck.checked === true && wordsCheck.checked === true) {
+    allCharacNode.checked = true;
+  }
+  if (numbersCheck.checked === false || lettersCheck.checked === false || symbolsCheck.checked === false || wordsCheck.checked === false) {
+    allCharacNode.checked = false;
+
+  }
+})
+
 allCharacNode.addEventListener("change", (event) => {
   const onChecked = event.target.checked;
   if (onChecked === true) {
-    form.numbers.checked = true;
-    form.letters.checked = true;
-    form.symbols.checked = true;
-    form.words.checked = true;
+    numbersCheck.checked = true;
+    lettersCheck.checked = true;
+    symbolsCheck.checked = true;
+    wordsCheck.checked = true;
   } else if (onChecked === false) {
-    form.numbers.checked = false;
-    form.letters.checked = false;
-    form.symbols.checked = false;
-    form.words.checked = false;
+    numbersCheck.checked = false;
+    lettersCheck.checked = false;
+    symbolsCheck.checked = false;
+    wordsCheck.checked = false;
   }
 })
 
@@ -115,9 +134,8 @@ form.addEventListener("submit", (event) => {
     allCharaters: event.target.allCharacteres.checked,
   };
 
-  console.log(checks)
-
   passwordParagraph.innerText = passwordGenerator(lengthRange, checks);
+  passwordParagraph.disabled = false;
 });
 
 passwordParagraph.addEventListener("click", (event) => {
