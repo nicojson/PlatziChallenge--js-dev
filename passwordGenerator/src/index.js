@@ -72,7 +72,7 @@ function numberRamdom (min, max) {
 }
 
 //pendiente de convertir a una función
-rangeInput.addEventListener("change", (event) => {
+rangeInput.addEventListener("input", (event) => {
   event.preventDefault();
   const getValue = event.target.value;
 
