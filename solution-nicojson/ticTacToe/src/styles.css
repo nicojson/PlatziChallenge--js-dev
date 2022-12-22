@@ -1,8 +1,9 @@
 :root{
-  --bg-color: #121f3d;
+  --bg-color: #1a090d;
+  --bg-color-secondary: #ace894;
   --text-color: white;
-  --border-color: #40587c;
-  --button-text-color: rgb(131, 217, 136);
+  --border-color: #4a314d;
+  --button-text-color: #6b6570;
 }
 
 *{

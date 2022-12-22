@@ -24,12 +24,12 @@ function printValue(event) {
     target.innerText = player1.value;
     player1.active = false;
     player2.active = true;
-  } else {
+  } else{
     target.innerText = player2.value;
     player2.active = false;
     player1.active = true;
   }
-
+  
   currentSlot.classList.add("disabled");
   currentSlot.removeEventListener("click", printValue);
 }
@@ -57,13 +57,13 @@ buttons.map((button) => {
 
     board.classList.remove("disabled");
 
-    if (value === "⭕") {
+    if (value === "🍬") {
       player1.value = value;
       player1.active = true;
-      player2.value = "❌";
+      player2.value = "🪄";
     } else {
       player1.value = value;
-      player2.value = "⭕";
+      player2.value = "🍬";
     }
 
     buttons.map((button) => {
